@@ -1,0 +1,4 @@
+Title: Vulnerability fixed :D
+Author: YC Support
+Date: September 27th, 2011
+Body: A private beta test user, <a href="http://twitter.com/ipwnm0nster">@ipwnm0nster</a>, sent us a vulnerability where you could execute PHP files, it's now fixed, thanks!
