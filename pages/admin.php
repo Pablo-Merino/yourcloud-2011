@@ -84,7 +84,7 @@ if($_SESSION['userlevel'] != 1) {
         	<form action="./extra/functions.php" method="POST">
         					<input type="hidden" name="action" value="addpost">
             				<input class="medium" name="title" size="16" type="text" placeholder="Post name"/> <br><br>
-       				        <input class="medium" name="author" size="16" type="text" placeholder="Post author" value="<?php echo $_SESSION['user'] ?>"/> <br><br>
+       				        <input class="medium" name="author" size="16" type="text" placeholder="Post author" value="YC Support"/> <br><br>
             				<input class="medium" name="date" size="16" type="text" placeholder="Post date" value="<?php echo date('F jS, y');?>"/> <br><br>
 							<textarea class="xxlarge" id="textarea" name="content" placeholder="Post content"></textarea> <br><br>
       		<button type="submit" class="btn primary">Post</button>
