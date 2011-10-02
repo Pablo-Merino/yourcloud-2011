@@ -89,7 +89,7 @@ if($_SESSION['userlevel'] != 1) {
 							<textarea class="xxlarge" id="textarea" name="content" placeholder="Post content"></textarea> <br><br>
       		<button type="submit" class="btn primary">Post</button>
               		</form>
-			<h3>Lat 5 commits</h3> <ul>
+			<h3>Last 5 commits</h3> <ul>
         	<?php
 
 	$file = file_get_contents('./extra/logs/github.txt', true);
