@@ -74,11 +74,11 @@ case "addpost":
 	foreach($data as $key => $value) {
 		$post .= $key.": ".$value."\r\n";
 	}
-	$dirlistnormal = getDirectoryList('./extra/blogposts/');
+	$dirlistnormal = getDirectoryList('./blogposts/');
 
 	$post_number = count($dirlistnormal) + 1;
 
-	$post_name = "./blogposts/".$post_number.".post";
+	$post_name = "./blogposts/post".$post_number.".post";
 
 	$file_stream = fopen($post_name, 'w');
 	fwrite($file_stream, $post);
