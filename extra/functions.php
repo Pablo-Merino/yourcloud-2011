@@ -1,4 +1,5 @@
 <?php
+
 global $dbuser, $dbpass, $host;
 session_start();
 include("db.php");

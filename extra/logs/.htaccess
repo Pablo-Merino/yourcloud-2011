@@ -1,4 +1,6 @@
 <Files "github.txt">
+
 Order allow,deny
 Deny from all
+
 </Files>
