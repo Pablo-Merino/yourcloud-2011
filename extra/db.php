@@ -2,7 +2,7 @@
 // DB DATA
 
 $dbuser = "root";
-$dbpass = "pablete1";
+$dbpass = "";
 $host = "localhost";
 $dbname = "yc2";
 

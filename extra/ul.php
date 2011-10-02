@@ -16,7 +16,7 @@ if(!is_writable($upload_path))
 // Upload the file to your specified path.
 if($public == "on") {
 
-	if(move_uploaded_file($_FILES['file']['tmp_name'],$upload_path . base64_encode("public->1").".".$filename)) {
+	if(move_uploaded_file($_FILES['file']['tmp_name'],$upload_path . base64_encode("public->1.".$filename))) {
 	// It worked.
 		header('Location: ../?/profile/files');
 
@@ -24,7 +24,7 @@ if($public == "on") {
 	echo '<META HTTP-EQUIV="Refresh" Content="0; URL=../?/profile/error/4">'; // It failed :(.
 	}
 } else {
-	if(move_uploaded_file($_FILES['file']['tmp_name'],$upload_path . base64_encode("public->0").".".$filename)) {
+	if(move_uploaded_file($_FILES['file']['tmp_name'],$upload_path . base64_encode("public->0.".$filename))) {
 	// It worked.
 		header('Location: ../?/profile/files');
 

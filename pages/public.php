@@ -8,9 +8,9 @@
             <?php
             $file = urldecode($location[3]);
 			if(file_exists("./data/".$error."/".$file)) {
-				$ispublic = explode(".", $file);
-				$ispublic = base64_decode($ispublic[0]);
-				$ispublic = explode("->", $ispublic);
+				$ispublic = explode(".", base64_decode($file));
+				//$ispublic = base64_decode($ispublic[0]);
+				$ispublic = explode("->", $ispublic[0]);
 				$ispublic = $ispublic[1];
 				if($ispublic != 1) {
 					?>
@@ -50,11 +50,11 @@
 				<?php
 				}
 
-          			$filexp = explode(".", $file);
+          			$filexp = explode(".", base64_decode($file));
           			?>
           			<p align="center" style="word-wrap: break-word;"><?php 
           			
-          			$filen = str_replace($filexp[0].".", "", $file);
+          			$filen = str_replace($filexp[0].".", "", base64_decode($file));
           			echo $filen;
           			
           			?>

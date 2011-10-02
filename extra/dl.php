@@ -6,8 +6,9 @@ if(!$_POST['file'] && $_POST['pfile'] && $_POST['ispublic']) {
 	$path = $root.urldecode($file);
 	$type = '';
 	$ispublic = explode(".", urldecode($file));
-				$ispublic = base64_decode($ispublic[0]);
-				$ispublic = explode("->", $ispublic);
+				$ispublic = explode(".", base64_decode($file));
+				//$ispublic = base64_decode($ispublic[0]);
+				$ispublic = explode("->", $ispublic[0]);
 				$ispublic = $ispublic[1];
 				if($ispublic != 1) {
 					header("Location: ../?/public/error");
@@ -25,8 +26,8 @@ if(!$_POST['file'] && $_POST['pfile'] && $_POST['ispublic']) {
 			$type = "application/force-download";
 			}
 		// Set Headers
-		$filexp = explode(".", $file);
-		$filen = str_replace($filexp[0].".", "", $file);
+		$filexp = explode(".", base64_decode($file));
+		$filen = str_replace($filexp[0].".", "", base64_decode($file));
 		header("Content-Type: ".$type);
 		header("Content-Disposition: attachment; filename=".$filen);
 		header("Content-Transfer-Encoding: binary");
@@ -84,8 +85,8 @@ if($passwd == $r[$index][1]) {
 			$type = "application/force-download";
 		}
 		// Set Headers
-		$filexp = explode(".", $file);
-		$filen = str_replace($filexp[0].".", "", $file);
+		$filexp = explode(".", base64_decode($file));
+		$filen = str_replace($filexp[0].".", "", base64_decode($file));
 		header("Content-Type: ".$type);
 		header("Content-Disposition: attachment; filename=".$filen);
 		header("Content-Transfer-Encoding: binary");

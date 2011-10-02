@@ -10,22 +10,22 @@ if(isset($_SESSION['user'])) {
 
 		if($location[3]) {
 			$file = urldecode($location[3]);
-			if(file_exists("./data/".$_SESSION['user']."/".$file)) {
+			if(file_exists("./data/".$_SESSION['user']."/".$filen)) {
 
 ?>
 					<ul class="breadcrumb" style="max-width: 540px;">
   						<li><a href="./?/profile">Profile</a> <span class="divider">/</span></li>
   						<li><a href="./?/profile/files">Files</a> <span class="divider">/</span></li>
   						<li class="active"><?php
-				$filexp = explode(".", $file);
 
-				$file = str_replace($filexp[0].".", "", $file);
+				$filexp = explode(".", base64_decode($file));
+
+				$file = str_replace($filexp[0].".", "", base64_decode($file));
 				echo $file;
 
 				?></li>
 					</ul><?php
-				$file = urldecode($location[3]);
-				$extension = file_extension(urldecode($location[3]));
+				$extension = file_extension(base64_decode(urldecode($location[3])));
 				$files = array("jpeg", "jpg", "png", "bmp", "gif");
 				if(in_array($extension, $files)) {
 ?>
@@ -64,7 +64,8 @@ if(isset($_SESSION['user'])) {
 
             			<button class="btn danger" type="submit">Delete file</button>
           			</form><?php
-				$filexp = explode(".", $file);
+				$filexp = explode(".", base64_decode($file));
+
 ?>
           			<p align="center" style="word-wrap: break-word;"><?php
 
@@ -119,9 +120,9 @@ if(isset($_SESSION['user'])) {
 
 					if(($file != ".") && ($file != "..") && ($file != ".htaccess"))
 					{
-						$filexp = explode(".", $file);
-						$files = TRUE;
-						$filen = str_replace($filexp[0].".", "", $file);
+
+						$filexp = explode(".", base64_decode($file));
+						$filen = str_replace($filexp[0].".", "", base64_decode($file));
 						echo "<tr><td><a href='./?/profile/files/$file'>$filen &raquo;</a></td></tr>";
 					}
 
