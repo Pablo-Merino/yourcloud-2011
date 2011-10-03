@@ -7,3 +7,4 @@
 (02/10/2011 - 01:10:40) NEW COMMIT => avier!!
 (02/10/2011 - 01:10:37) NEW COMMIT => Modified the blog post adding
 (02/10/2011 - 01:10:36) NEW COMMIT => Edited .gitignore
+(03/10/2011 - 06:10:29) NEW COMMIT => I hate backslashes fails
