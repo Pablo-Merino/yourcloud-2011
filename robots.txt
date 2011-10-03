@@ -4,5 +4,5 @@
 # Disallow:	if this matches first part of requested path,
 #			forget it
 
-User-agent: *
-Disallow: /     
+User-agent: *    # applies to all robots
+Disallow: /      # disallow indexing of all pages
